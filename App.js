@@ -1,21 +1,24 @@
-import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
+import { useState } from 'react';
+import { Button,Searchbar } from 'react-native-paper';
+import { StyleSheet, Text, View,StatusBar, SafeAreaView } from "react-native";
+import { RestaurantScreen } from './src/features/restaurants/screens/restaurants.screen';
+import ExpoStatusBar from 'expo-status-bar/build/ExpoStatusBar';
+
+import AppLoading from 'expo-app-loading';
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <View></View>
-      <Ap></Ap>
-    </View>
-  );
+
+  if(!OswaldLoaded || !LatoLoaded){
+    return <AppLoading />;
+  }
+  else{
+    return (
+      <>
+      <RestaurantScreen font={fonts}/>
+      <ExpoStatusBar style='auto'/>
+      </>
+    );
+  }
+
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});
