@@ -18,7 +18,6 @@ export const CartScreen = () => {
     },
     container: {
       flex: 1,
-      
     },
     textstyle:{
         color:"white",

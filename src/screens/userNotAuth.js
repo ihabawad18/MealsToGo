@@ -1,37 +1,32 @@
 import React from 'react';
+import {View,Text,StyleSheet,Button} from 'react-native'
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-
+import { Welcome } from './Welcome';
+import { SignUp } from './Signup';
+import { SignIn } from './Signin';
 const Stack = createStackNavigator();
-export const Welcoming = () => {
-    return (
-      <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-        <Text>Welcoming!</Text>
-      </View>
-    );
-  };
-export   const SignIn = () => {
-    return (
-      <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-        <Text>SignIn!</Text>
-      </View>
-    );
-  };
-  export const SignUp = () => {
-    return (
-      <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-        <Text>SignOut!</Text>
-      </View>
-    );
-  };
-export default function UserNotAuth() {
+
+export const UserNotAuth=()=> {
   return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Welcome" component={Welcoming} />
+      <Stack.Navigator screenOptions={            {  headerShown: false,}
+      }>
+        <Stack.Screen name="Welcome" component={Welcome} />
         <Stack.Screen name="Sign In" component={SignIn} />
         <Stack.Screen name="Sign Up" component={SignUp} />
       </Stack.Navigator>
-    </NavigationContainer>
   );
 }
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#F5FCFF',
+  },
+  title: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    marginBottom: 20,
+  },
+});

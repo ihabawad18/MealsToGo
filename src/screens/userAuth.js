@@ -9,6 +9,7 @@ import Ionicons from "react-native-vector-icons/Ionicons";
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 import { View ,Text} from "react-native";
 import { CartScreen } from "../features/Cart/Screens/Cart.screen";
+import { SettingsScreen } from "../features/Settings/screens/settings.screen";
 const Stack = createStackNavigator();
 const HomeScreen = () => {
   return (
@@ -19,10 +20,7 @@ const HomeScreen = () => {
 };
 import { FavoritesScreen } from "../features/Favorites/screens/FavoritesScreen";
 import { RestaurantDetailScreen } from "../features/restaurants/screens/restaurantDetail.screen";
-const SettingsScreen = () => {
-  const [rating, setRating] = useState(0);
-  <View></View>;
-};
+
 const Tab = createBottomTabNavigator();
 const RestaurantStackNavigation = (props) => {
   return (

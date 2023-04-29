@@ -19,12 +19,18 @@ import { DATA } from "./src/features/restaurants/components/restaurant-Data";
 import { FavoriteContextProvider } from "./src/components/FavoriteContext";
 import { UserAuth } from "./src/screens/userAuth";
 import {UserNotAuth} from "./src/screens/userNotAuth";
+import { useAuthentication } from "./useAuthentication";
 const Presses = Array.from({ length: DATA.length }, () =>
   Array.from({ length: Items.length }, () => 0)
 );
 
 export default function App() {
+  const [loading, setLoading] = useState(true)
+  const [userr, setUserr] = useState(null)
   const [nbOfPresses, setNbOfPresses] = useState(Presses);
+  const { user } = useAuthentication();  useEffect(()=>{
+      
+  })
   function incrementPresses(row, col) {
     const updatedNbOfPresses = [...nbOfPresses];
     updatedNbOfPresses[row][col] += 1;
@@ -48,8 +54,9 @@ export default function App() {
         }}
       >
         <NavigationContainer>
-            
-            <UserAuth/>
+            {user?
+              (<UserAuth/>):(<UserNotAuth/>)
+            }
         </NavigationContainer>
         <ExpoStatusBar style="auto" />
       </ThemeContext.Provider>
