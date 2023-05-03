@@ -15,12 +15,13 @@ export const RestaurantItem = (props) => {
       <TouchableOpacity
         style={styles.button2}
         onPress={() => {
-              console.log(props.resId);
+              console.log(c.nbOfPresses);
               c.incrementPresses(props.resId,props.item.id);
         }}
       >
         <Icon name="add" size={30} color="white" />
-        {c.nbOfPresses[props.resId][props.item.id] > 0 && (
+        {
+          c.nbOfPresses[props.resId][props.item.id] > 0 && (
           <View style={styles.badge}>
             <Text style={styles.badgeText}>{c.nbOfPresses[props.resId][props.item.id]}</Text>
           </View>

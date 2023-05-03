@@ -20,8 +20,8 @@ import { FavoriteContextProvider } from "./src/components/FavoriteContext";
 import { UserAuth } from "./src/screens/userAuth";
 import {UserNotAuth} from "./src/screens/userNotAuth";
 import { useAuthentication } from "./useAuthentication";
-const Presses = Array.from({ length: DATA.length }, () =>
-  Array.from({ length: Items.length }, () => 0)
+const Presses = Array.from({ length: DATA.length+1 }, () =>
+  Array.from({ length: Items.length+2 }, () => 0)
 );
 
 export default function App() {
